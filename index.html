@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMART CAMPUS - One Platform. Complete School Management</title>
+
+    <!-- WhatsApp & Social Media Rich Preview Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vickeysingh8461-bot.github.io/smart-campus/index.html">
+    <meta property="og:title" content="SMART CAMPUS - Multi-School Cloud SaaS Platform">
+    <meta property="og:description" content="Eliminate traditional paperwork. Manage admissions, fee collection, attendance, results lock, and parent communication on one cloud platform.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
                     colors: {
                         brand: {
                             50: '#eef2ff',
                             100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            500: '#6366f1',
                             600: '#4f46e5',
                             700: '#4338ca',
                             800: '#3730a3',
@@ -26,203 +46,220 @@
             }
         }
     </script>
+    <style>
+        .glow-effect {
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15), transparent 70%);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
     <!-- 1. Header & Navigation -->
-    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
+    <header class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-xl z-50 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-11 h-11 bg-brand-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-brand-600/30">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 bg-gradient-to-tr from-brand-600 to-indigo-500 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <span class="text-2xl font-black text-slate-900 tracking-tight">SMART<span class="text-brand-600">CAMPUS</span></span>
-                    <span class="hidden sm:inline-block ml-2 text-[10px] font-bold bg-indigo-100 text-brand-700 px-2 py-0.5 rounded-full uppercase">SaaS ERP</span>
+                    <span class="text-2xl font-black text-white tracking-tight">SMART<span class="text-brand-500">CAMPUS</span></span>
+                    <span class="hidden sm:inline-block ml-2 text-[10px] font-bold bg-brand-500/20 text-brand-300 border border-brand-500/30 px-2 py-0.5 rounded-full uppercase">SaaS ERP</span>
                 </div>
-            </div>
+            </a>
 
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
-                <a href="#features" class="hover:text-brand-600 transition">Features</a>
-                <a href="#result-lock" class="hover:text-brand-600 transition">Result Lock</a>
-                <a href="#pricing" class="hover:text-brand-600 transition">Pricing</a>
-                <a href="#leadership" class="hover:text-brand-600 transition">About Us</a>
-                <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-300 text-sm">
+                <a href="#features" class="hover:text-brand-400 transition">Features</a>
+                <a href="#result-lock" class="hover:text-brand-400 transition">Result Lock</a>
+                <a href="#pricing" class="hover:text-brand-400 transition">Pricing</a>
+                <a href="#leadership" class="hover:text-brand-400 transition">About Us</a>
+                <a href="#contact" class="hover:text-brand-400 transition">Contact</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <button onclick="openModal('loginModal')" class="text-sm font-semibold text-slate-700 hover:text-brand-600 px-3 py-2">
+                <button onclick="openModal('loginModal')" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 transition">
                     Login
                 </button>
-                <button onclick="openModal('registerModal')" class="bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-brand-600/20 transition transform hover:-translate-y-0.5">
+                <button onclick="openModal('registerModal')" class="bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/30 transition transform hover:-translate-y-0.5">
                     Register School
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- 2. Hero Section -->
-    <section class="pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-brand-700 text-xs font-semibold mb-6">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Multi-School Cloud SaaS Architecture
-        </div>
-        
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight max-w-4xl mx-auto">
-            One Platform. <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-500">Complete School Management.</span>
-        </h1>
+    <!-- 2. Hero Section with Glow Background -->
+    <section class="relative pt-36 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center overflow-hidden">
+        <!-- Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Eliminate traditional paperwork. Manage admissions, fee collection, real-time attendance, examination marksheets, and parent communication on a single, secure cloud platform.
-        </p>
-
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button onclick="openModal('registerModal')" class="w-full sm:w-auto px-8 py-3.5 bg-brand-600 text-white font-bold rounded-xl shadow-lg shadow-brand-600/30 hover:bg-brand-700 transition">
-                Start 30-Day Free Trial
-            </button>
-            <a href="#features" class="w-full sm:w-auto px-8 py-3.5 bg-white border border-slate-300 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition">
-                Explore Modules
-            </a>
-        </div>
-
-        <!-- Dashboard Live Preview Card -->
-        <div class="mt-14 max-w-5xl mx-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl shadow-indigo-900/10">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-100 px-2 text-xs text-slate-400">
-                <div class="flex gap-1.5">
-                    <span class="w-3 h-3 rounded-full bg-rose-400 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
-                </div>
-                <span>Workspace: Active (Delhi Public Academy)</span>
-                <span class="text-emerald-600 font-semibold">● Online</span>
+        <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-brand-300 text-xs font-semibold mb-6 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Multi-School Cloud SaaS Architecture
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left">
-                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                    <p class="text-xs text-slate-500 uppercase font-semibold">Total Students</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mt-1">1,250</h3>
-                    <p class="text-[11px] text-emerald-600 mt-1"><i class="fa-solid fa-arrow-up"></i> 14 new admissions</p>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                One Platform. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-brand-400 to-purple-400">Complete School Management.</span>
+            </h1>
+
+            <p class="mt-6 text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Eliminate traditional paperwork. Manage admissions, fee collection, real-time attendance, examination marksheets, and parent communication on a single, secure cloud platform.
+            </p>
+
+            <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="openModal('registerModal')" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-600 to-indigo-600 text-white font-bold rounded-xl shadow-xl shadow-brand-600/30 hover:shadow-brand-500/50 hover:scale-105 transition duration-300">
+                    <i class="fa-solid fa-rocket mr-2"></i> Start 30-Day Free Trial
+                </button>
+                <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-slate-900 border border-slate-700 text-slate-200 font-bold rounded-xl hover:bg-slate-800 hover:border-slate-600 transition">
+                    Explore Modules
+                </a>
+            </div>
+
+            <!-- Dashboard Live Preview Card -->
+            <div class="mt-16 max-w-5xl mx-auto rounded-3xl border border-slate-800 bg-slate-900/70 backdrop-blur-2xl p-5 sm:p-6 shadow-2xl shadow-indigo-950/60 text-left">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800 px-2 text-xs text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                    </div>
+                    <span class="font-medium">Workspace: Active (Delhi Public Academy)</span>
+                    <span class="text-emerald-400 font-semibold flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Cloud Sync
+                    </span>
                 </div>
-                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                    <p class="text-xs text-slate-500 uppercase font-semibold">Today's Attendance</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mt-1">94.8%</h3>
-                    <p class="text-[11px] text-brand-600 mt-1">Real-time sync</p>
-                </div>
-                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                    <p class="text-xs text-slate-500 uppercase font-semibold">Fee Collection</p>
-                    <h3 class="text-2xl font-bold text-emerald-600 mt-1">₹8,40,000</h3>
-                    <p class="text-[11px] text-rose-500 mt-1">Due Balance: ₹1,12,000</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-5">
+                    <div class="p-5 bg-slate-800/60 rounded-2xl border border-slate-700/50 hover:border-brand-500/40 transition">
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Total Students</p>
+                        <h3 class="text-3xl font-extrabold text-white mt-1">1,250</h3>
+                        <p class="text-xs text-emerald-400 mt-2 flex items-center gap-1"><i class="fa-solid fa-arrow-trend-up"></i> 14 new admissions</p>
+                    </div>
+                    <div class="p-5 bg-slate-800/60 rounded-2xl border border-slate-700/50 hover:border-brand-500/40 transition">
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Today's Attendance</p>
+                        <h3 class="text-3xl font-extrabold text-white mt-1">94.8%</h3>
+                        <p class="text-xs text-brand-400 mt-2 flex items-center gap-1"><i class="fa-solid fa-rotate"></i> Real-time sync</p>
+                    </div>
+                    <div class="p-5 bg-slate-800/60 rounded-2xl border border-slate-700/50 hover:border-brand-500/40 transition">
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Fee Collection</p>
+                        <h3 class="text-3xl font-extrabold text-emerald-400 mt-1">₹8,40,000</h3>
+                        <p class="text-xs text-rose-400 mt-2 flex items-center gap-1"><i class="fa-solid fa-circle-exclamation"></i> Due Balance: ₹1,12,000</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 3. Key Modules Grid -->
-    <section id="features" class="py-20 bg-white border-y border-slate-200">
+    <section id="features" class="py-24 bg-slate-900/50 border-y border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">All School Operations in One Click</h2>
-                <p class="text-slate-600 mt-3 text-sm">SMART CAMPUS provides 14+ modules tailored specifically to each role.</p>
+                <span class="text-brand-400 text-xs font-bold tracking-widest uppercase">Comprehensive Toolkit</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">All School Operations in One Click</h2>
+                <p class="text-slate-400 mt-3 text-sm">SMART CAMPUS provides 14+ modules tailored specifically to each role.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                 <!-- Module 1 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4">
+                <div class="p-7 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-500 hover:shadow-xl hover:shadow-brand-500/10 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
                         <i class="fa-solid fa-id-card"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Student & Admission</h3>
-                    <p class="text-slate-600 text-sm mt-2">Digital application forms, document verification, auto-generated student IDs, and class assignments.</p>
+                    <h3 class="text-lg font-bold text-white">Student & Admission</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">Digital application forms, document verification, auto-generated student IDs, and class assignments.</p>
                 </div>
 
                 <!-- Module 2 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                <div class="p-7 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500 hover:shadow-xl hover:shadow-emerald-500/10 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
                         <i class="fa-solid fa-file-invoice-dollar"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Fee Management</h3>
-                    <p class="text-slate-600 text-sm mt-2">Monthly fee scheduling, digital receipts, automated due balance tracking, and cash/online reconciliations.</p>
+                    <h3 class="text-lg font-bold text-white">Fee Management</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">Monthly fee scheduling, digital receipts, automated due balance tracking, and cash/online reconciliations.</p>
                 </div>
 
                 <!-- Module 3 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4">
+                <div class="p-7 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500 hover:shadow-xl hover:shadow-amber-500/10 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
                         <i class="fa-solid fa-calendar-check"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Smart Attendance</h3>
-                    <p class="text-slate-600 text-sm mt-2">Class-wise daily tracking, automated percentage calculation, and automated monthly absence notifications.</p>
+                    <h3 class="text-lg font-bold text-white">Smart Attendance</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">Class-wise daily tracking, automated percentage calculation, and automated monthly absence notifications.</p>
                 </div>
 
                 <!-- Module 4 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                <div class="p-7 rounded-2xl bg-slate-900 border border-slate-800 hover:border-rose-500 hover:shadow-xl hover:shadow-rose-500/10 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
                         <i class="fa-solid fa-lock"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Result Hold & Release</h3>
-                    <p class="text-slate-600 text-sm mt-2">Automated report card lock for unpaid dues. Administrators can securely override with mandatory audit logs.</p>
+                    <h3 class="text-lg font-bold text-white">Result Hold & Release</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">Automated report card lock for unpaid dues. Administrators can securely override with mandatory audit logs.</p>
                 </div>
 
                 <!-- Module 5 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl mb-4">
+                <div class="p-7 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/10 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
                         <i class="fa-solid fa-robot"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">AI Assistant Ready</h3>
-                    <p class="text-slate-600 text-sm mt-2">AI-powered test drafting, student performance trend analysis, and automated parent inquiry response bots.</p>
+                    <h3 class="text-lg font-bold text-white">AI Assistant Ready</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">AI-powered test drafting, student performance trend analysis, and automated parent inquiry response bots.</p>
                 </div>
 
                 <!-- Module 6 -->
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-brand-600 flex items-center justify-center text-xl mb-4">
+                <div class="p-7 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 hover:shadow-xl hover:shadow-indigo-500/10 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
                         <i class="fa-solid fa-mobile-screen"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Parent & Student Portal</h3>
-                    <p class="text-slate-600 text-sm mt-2">Dedicated student portals for homework, exam schedules, fee payment receipts, and school notices.</p>
+                    <h3 class="text-lg font-bold text-white">Parent & Student Portal</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">Dedicated student portals for homework, exam schedules, fee payment receipts, and school notices.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 4. Result Hold & Release Special Feature -->
-    <section id="result-lock" class="py-20 bg-slate-900 text-white">
+    <section id="result-lock" class="py-24 bg-slate-950 text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-xs uppercase font-bold text-indigo-400 tracking-wider">Unique Security Lock</span>
-                    <h2 class="text-3xl font-extrabold mt-2 leading-snug">Smart Result Hold & Release System</h2>
-                    <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-                        If a student has outstanding fee dues, their examination marksheet is automatically placed on <strong>HOLD</strong>. School Administrators can unlock the marksheet under special circumstances by recording a mandatory override reason.
+                    <span class="text-xs uppercase font-bold text-brand-400 tracking-widest bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Unique Security Lock</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-4 leading-snug">Smart Result Hold & Release System</h2>
+                    <p class="text-slate-400 mt-4 text-base leading-relaxed">
+                        If a student has outstanding fee dues, their examination marksheet is automatically placed on <strong class="text-rose-400">HOLD</strong>. School Administrators can unlock the marksheet under special circumstances by recording a mandatory override reason.
                     </p>
                     
-                    <ul class="mt-6 space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400"></i> Automatic marksheet lock on unpaid balance</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400"></i> Multi-level Administrator Override control</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400"></i> Permanent audit logging (Admin ID, timestamp, and reason)</li>
+                    <ul class="mt-6 space-y-3.5 text-sm text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400 text-base"></i> Automatic marksheet lock on unpaid balance</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400 text-base"></i> Multi-level Administrator Override control</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400 text-base"></i> Permanent audit logging (Admin ID, timestamp, and reason)</li>
                     </ul>
                 </div>
 
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-xl">
-                    <div class="flex items-center justify-between pb-4 border-b border-slate-700">
-                        <span class="text-xs font-semibold text-slate-400">Result Lock Preview</span>
-                        <span class="px-2.5 py-1 text-xs bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded-md font-semibold">
-                            <i class="fa-solid fa-lock mr-1"></i> STATUS: HOLD
+                <div class="bg-slate-900 p-7 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-16 -top-16 w-36 h-36 bg-rose-500/10 rounded-full blur-2xl"></div>
+
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Live Preview</span>
+                        <span class="px-3 py-1 text-xs bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded-lg font-bold flex items-center gap-1.5">
+                            <i class="fa-solid fa-lock"></i> STATUS: HOLD
                         </span>
                     </div>
-                    <div class="mt-4 space-y-3 text-sm">
-                        <div class="flex justify-between text-slate-300">
-                            <span>Student:</span> <span class="font-bold text-white">Rahul Sharma (Class 10)</span>
+                    <div class="mt-5 space-y-3.5 text-sm">
+                        <div class="flex justify-between text-slate-400">
+                            <span>Student:</span> <span class="font-bold text-white">Rahul Sharma (Class 10-A)</span>
                         </div>
-                        <div class="flex justify-between text-slate-300">
-                            <span>Total Fee:</span> <span>₹20,000</span>
+                        <div class="flex justify-between text-slate-400">
+                            <span>Total Term Fee:</span> <span class="text-white font-medium">₹20,000</span>
                         </div>
-                        <div class="flex justify-between text-slate-300">
-                            <span>Paid Fee:</span> <span class="text-emerald-400">₹15,000</span>
+                        <div class="flex justify-between text-slate-400">
+                            <span>Paid Fee:</span> <span class="text-emerald-400 font-bold">₹15,000</span>
                         </div>
-                        <div class="flex justify-between font-bold text-rose-400">
+                        <div class="flex justify-between font-bold text-rose-400 border-t border-slate-800 pt-2">
                             <span>Due Balance:</span> <span>₹5,000</span>
                         </div>
-                        <div class="mt-4 p-3 bg-rose-950/40 border border-rose-900 rounded-lg text-xs text-rose-200">
-                            <i class="fa-solid fa-triangle-exclamation mr-1"></i> Marksheet locked due to outstanding dues. Requires authorized admin override.
+                        <div class="mt-5 p-4 bg-rose-950/30 border border-rose-900/60 rounded-xl text-xs text-rose-300 flex items-start gap-2.5">
+                            <i class="fa-solid fa-triangle-exclamation text-rose-400 text-base mt-0.5"></i>
+                            <span>Marksheet locked due to outstanding dues. Requires authorized admin override code to release to parent portal.</span>
                         </div>
                     </div>
                 </div>
@@ -231,62 +268,63 @@
     </section>
 
     <!-- 5. Subscription Plans -->
-    <section id="pricing" class="py-20 bg-slate-50">
+    <section id="pricing" class="py-24 bg-slate-900/60 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-slate-900">Affordable Subscription Plans</h2>
-            <p class="text-slate-600 mt-2 text-sm">Simple, transparent pricing designed for schools of any size.</p>
+            <span class="text-brand-400 text-xs font-bold tracking-widest uppercase">Transparent Pricing</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Affordable Subscription Plans</h2>
+            <p class="text-slate-400 mt-2 text-sm">Simple, predictable pricing designed for schools of any size.</p>
 
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <!-- Free Trial -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
                     <div>
-                        <h3 class="font-bold text-lg text-slate-900">Free Trial</h3>
-                        <p class="text-xs text-slate-500 mt-1">For initial platform testing</p>
-                        <div class="mt-4 text-3xl font-extrabold text-slate-900">₹0 <span class="text-xs text-slate-500 font-normal">/ 30 Days</span></div>
-                        <ul class="mt-6 space-y-3 text-sm text-slate-600">
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Up to 1,000 Students</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Online Admission Form</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Attendance Tracking</li>
+                        <h3 class="font-bold text-xl text-white">Free Trial</h3>
+                        <p class="text-xs text-slate-400 mt-1">For initial platform testing</p>
+                        <div class="mt-5 text-4xl font-extrabold text-white">₹0 <span class="text-xs text-slate-400 font-normal">/ 30 Days</span></div>
+                        <ul class="mt-7 space-y-3.5 text-sm text-slate-300">
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Up to 1,000 Students</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Online Admission Form</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Attendance Tracking</li>
                         </ul>
                     </div>
-                    <button onclick="openModal('registerModal')" class="mt-8 w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl font-bold text-sm transition">
+                    <button onclick="openModal('registerModal')" class="mt-8 w-full py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-sm transition">
                         Start Trial
                     </button>
                 </div>
 
-                <!-- Basic Plan -->
-                <div class="bg-white p-8 rounded-2xl border-2 border-brand-600 shadow-lg relative flex flex-col justify-between">
-                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+                <!-- Basic Plan (Highlighted) -->
+                <div class="bg-gradient-to-b from-slate-900 to-indigo-950/40 p-8 rounded-3xl border-2 border-brand-500 shadow-2xl shadow-brand-500/20 relative flex flex-col justify-between">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-indigo-600 text-white text-[11px] font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider shadow">Most Popular</span>
                     <div>
-                        <h3 class="font-bold text-lg text-slate-900">Basic Plan</h3>
-                        <p class="text-xs text-slate-500 mt-1">For small & medium schools</p>
-                        <div class="mt-4 text-3xl font-extrabold text-slate-900">₹499 <span class="text-xs text-slate-500 font-normal">/ month</span></div>
-                        <ul class="mt-6 space-y-3 text-sm text-slate-600">
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Up to 1,000 Students</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Digital Fee Receipts</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Result Hold & Release System</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> School Analytics & Reports</li>
+                        <h3 class="font-bold text-xl text-white">Basic Plan</h3>
+                        <p class="text-xs text-slate-400 mt-1">For small & medium schools</p>
+                        <div class="mt-5 text-4xl font-extrabold text-white">₹499 <span class="text-xs text-slate-400 font-normal">/ month</span></div>
+                        <ul class="mt-7 space-y-3.5 text-sm text-slate-200">
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Up to 1,000 Students</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Digital Fee Receipts</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Result Hold & Release System</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> School Analytics & Reports</li>
                         </ul>
                     </div>
-                    <button onclick="openModal('registerModal')" class="mt-8 w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold text-sm transition shadow-md shadow-brand-600/20">
+                    <button onclick="openModal('registerModal')" class="mt-8 w-full py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-bold text-sm transition shadow-lg shadow-brand-600/30">
                         Choose Basic
                     </button>
                 </div>
 
                 <!-- Standard Plan -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
                     <div>
-                        <h3 class="font-bold text-lg text-slate-900">Standard Plan</h3>
-                        <p class="text-xs text-slate-500 mt-1">For growing institutions</p>
-                        <div class="mt-4 text-3xl font-extrabold text-slate-900">₹999 <span class="text-xs text-slate-500 font-normal">/ month</span></div>
-                        <ul class="mt-6 space-y-3 text-sm text-slate-600">
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Up to 5,000 Students</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> AI Assistant Integration</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Library & Transport Management</li>
-                            <li><i class="fa-solid fa-check text-brand-600 mr-2"></i> Priority Technical Support</li>
+                        <h3 class="font-bold text-xl text-white">Standard Plan</h3>
+                        <p class="text-xs text-slate-400 mt-1">For growing institutions</p>
+                        <div class="mt-5 text-4xl font-extrabold text-white">₹999 <span class="text-xs text-slate-400 font-normal">/ month</span></div>
+                        <ul class="mt-7 space-y-3.5 text-sm text-slate-300">
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Up to 5,000 Students</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> AI Assistant Integration</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Library & Transport Management</li>
+                            <li><i class="fa-solid fa-check text-brand-400 mr-2"></i> Priority Technical Support</li>
                         </ul>
                     </div>
-                    <button onclick="openModal('registerModal')" class="mt-8 w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl font-bold text-sm transition">
+                    <button onclick="openModal('registerModal')" class="mt-8 w-full py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-sm transition">
                         Choose Standard
                     </button>
                 </div>
@@ -295,97 +333,106 @@
     </section>
 
     <!-- 6. About Leadership -->
-    <section id="leadership" class="py-16 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl font-bold text-slate-900">Leadership & Vision</h2>
-            <p class="text-slate-500 text-sm mt-1">Transforming traditional schooling with cutting-edge digital management.</p>
+    <section id="leadership" class="py-20 bg-slate-950 border-t border-slate-800 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="text-brand-400 text-xs font-bold tracking-widest uppercase">Our Team</span>
+            <h2 class="text-3xl font-extrabold text-white mt-2">Leadership & Vision</h2>
+            <p class="text-slate-400 text-sm mt-1">Transforming traditional schooling with cutting-edge digital management.</p>
 
-            <div class="mt-8 flex flex-wrap justify-center gap-8">
-                <div class="p-6 bg-slate-50 rounded-xl border border-slate-200 w-64 text-center">
-                    <div class="w-16 h-16 bg-brand-600 text-white font-bold text-xl rounded-full flex items-center justify-center mx-auto mb-3">VS</div>
-                    <h3 class="font-bold text-slate-900">Vickey Singh</h3>
-                    <p class="text-xs text-brand-600 font-semibold">Founder</p>
+            <div class="mt-10 flex flex-wrap justify-center gap-8">
+                <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800 w-72 text-center hover:border-brand-500/50 transition">
+                    <div class="w-20 h-20 bg-gradient-to-tr from-brand-600 to-indigo-500 text-white font-black text-2xl rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-500/20">VS</div>
+                    <h3 class="font-bold text-lg text-white">Vickey Singh</h3>
+                    <p class="text-xs text-brand-400 font-semibold uppercase tracking-wider mt-1">Founder</p>
                 </div>
-                <div class="p-6 bg-slate-50 rounded-xl border border-slate-200 w-64 text-center">
-                    <div class="w-16 h-16 bg-indigo-700 text-white font-bold text-xl rounded-full flex items-center justify-center mx-auto mb-3">SS</div>
-                    <h3 class="font-bold text-slate-900">Shipla Singh</h3>
-                    <p class="text-xs text-brand-600 font-semibold">Chief Executive Officer (CEO)</p>
+                <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800 w-72 text-center hover:border-brand-500/50 transition">
+                    <div class="w-20 h-20 bg-gradient-to-tr from-indigo-700 to-purple-600 text-white font-black text-2xl rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-indigo-600/20">SS</div>
+                    <h3 class="font-bold text-lg text-white">Shipla Singh</h3>
+                    <p class="text-xs text-brand-400 font-semibold uppercase tracking-wider mt-1">Chief Executive Officer (CEO)</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 7. Footer -->
-    <footer id="contact" class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
+    <footer id="contact" class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-2 text-white font-bold text-lg">
-                <i class="fa-solid fa-graduation-cap text-brand-600"></i> SMART CAMPUS
+                <i class="fa-solid fa-graduation-cap text-brand-500"></i> SMART CAMPUS
             </div>
             <p>© 2026 SMART CAMPUS. Multi-School SaaS Platform. All Rights Reserved.</p>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-white"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin"></i></a>
+            <div class="flex gap-4 text-base">
+                <a href="#" class="hover:text-brand-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-400 transition"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-brand-400 transition"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- 8. Modal: School Registration -->
-    <div id="registerModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
-            <button onclick="closeModal('registerModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            <h3 class="text-xl font-bold text-slate-900">Register Your School</h3>
-            <p class="text-xs text-slate-500 mt-1">Start your 30-day free trial workspace immediately.</p>
+    <!-- 8. Floating WhatsApp Share / Contact Button -->
+    <a href="https://api.whatsapp.com/send?text=Explore%20SMART%20CAMPUS%20School%20Management%20Platform:%20https://vickeysingh8461-bot.github.io/smart-campus/index.html" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition duration-300 border-2 border-white/20"
+       title="Share on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-            <form class="mt-4 space-y-3" onsubmit="handleRegister(event)">
+    <!-- 9. Modal: School Registration -->
+    <div id="registerModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-7 shadow-2xl relative text-left">
+            <button onclick="closeModal('registerModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-white">Register Your School</h3>
+            <p class="text-xs text-slate-400 mt-1">Start your 30-day free trial workspace immediately.</p>
+
+            <form class="mt-5 space-y-3.5" onsubmit="handleRegister(event)">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700">School Name</label>
-                    <input type="text" required placeholder="e.g. Green Valley Public School" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-xs font-semibold text-slate-300">School Name</label>
+                    <input type="text" required placeholder="e.g. Green Valley Public School" class="mt-1 w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 text-white rounded-xl text-sm focus:outline-none focus:border-brand-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700">Principal / Admin Name</label>
-                    <input type="text" required placeholder="Full Name" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-xs font-semibold text-slate-300">Principal / Admin Name</label>
+                    <input type="text" required placeholder="Full Name" class="mt-1 w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 text-white rounded-xl text-sm focus:outline-none focus:border-brand-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700">Mobile Number</label>
-                    <input type="tel" required placeholder="+91 98765 43210" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-xs font-semibold text-slate-300">Mobile Number</label>
+                    <input type="tel" required placeholder="+91 98765 43210" class="mt-1 w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 text-white rounded-xl text-sm focus:outline-none focus:border-brand-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700">Email Address</label>
-                    <input type="email" required placeholder="admin@school.com" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-xs font-semibold text-slate-300">Email Address</label>
+                    <input type="email" required placeholder="admin@school.com" class="mt-1 w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 text-white rounded-xl text-sm focus:outline-none focus:border-brand-500">
                 </div>
-                <button type="submit" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold text-sm transition mt-2">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white rounded-xl font-bold text-sm transition mt-3 shadow-lg shadow-brand-600/30">
                     Create School Workspace
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- 9. Modal: Login -->
-    <div id="loginModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
-            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
-                <i class="fa-solid fa-xmark text-lg"></i>
+    <!-- 10. Modal: Login -->
+    <div id="loginModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-sm w-full p-7 shadow-2xl relative text-left">
+            <button onclick="closeModal('loginModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
-            <h3 class="text-xl font-bold text-slate-900">Sign in to SMART CAMPUS</h3>
-            <p class="text-xs text-slate-500 mt-1">Enter your school workspace credentials.</p>
+            <h3 class="text-2xl font-bold text-white">Sign in</h3>
+            <p class="text-xs text-slate-400 mt-1">Enter your school workspace credentials.</p>
 
-            <form class="mt-4 space-y-3" onsubmit="event.preventDefault(); alert('Authentication system is initializing...'); closeModal('loginModal');">
+            <form class="mt-5 space-y-3.5" onsubmit="event.preventDefault(); alert('Authentication system is initializing...'); closeModal('loginModal');">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700">School ID / Code</label>
-                    <input type="text" required placeholder="SCH-1001" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-xs font-semibold text-slate-300">School ID / Code</label>
+                    <input type="text" required placeholder="SCH-1001" class="mt-1 w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 text-white rounded-xl text-sm focus:outline-none focus:border-brand-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700">Email / Username</label>
-                    <input type="text" required placeholder="admin@school.com" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-xs font-semibold text-slate-300">Email / Username</label>
+                    <input type="text" required placeholder="admin@school.com" class="mt-1 w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 text-white rounded-xl text-sm focus:outline-none focus:border-brand-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700">Password</label>
-                    <input type="password" required placeholder="••••••••" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-xs font-semibold text-slate-300">Password</label>
+                    <input type="password" required placeholder="••••••••" class="mt-1 w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 text-white rounded-xl text-sm focus:outline-none focus:border-brand-500">
                 </div>
-                <button type="submit" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold text-sm transition mt-2">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white rounded-xl font-bold text-sm transition mt-3 shadow-lg shadow-brand-600/30">
                     Sign In
                 </button>
             </form>
@@ -395,10 +442,12 @@
     <!-- JavaScript for Interactive Modals -->
     <script>
         function openModal(id) {
-            document.getElementById(id).classList.remove('hidden');
+            const el = document.getElementById(id);
+            el.classList.remove('hidden');
         }
         function closeModal(id) {
-            document.getElementById(id).classList.add('hidden');
+            const el = document.getElementById(id);
+            el.classList.add('hidden');
         }
         function handleRegister(e) {
             e.preventDefault();
